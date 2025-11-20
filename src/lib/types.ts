@@ -2,7 +2,8 @@ export type Wine = {
   id: string;
   nazev: string;
   rocnik: number;
-  odruda: string;
+  zatrideni2: string;
+  zatrideni: string;
   vinarsvi: string;
   oblast: string;
   cena: number;

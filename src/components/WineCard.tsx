@@ -34,12 +34,15 @@ export function WineCard({ wine, ctaLabel = "Detail vína" }: Props) {
         </div>
         <h3 className="font-playfair text-xl text-forest">{wine.nazev}</h3>
         <p className="text-sm font-semibold uppercase tracking-wide text-muted">
-          {wine.odruda}
+          {wine.zatrideni2}
+        </p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-muted">
+          {wine.zatrideni}
         </p>
         <p className="mt-1 line-clamp-3 text-sm text-muted">{wine.popis}</p>
         <div className="mt-auto flex items-center justify-between pt-4">
           <span className="text-lg font-semibold text-forest">
-            {wine.cena} Kč / lahev
+            {wine.cena} Kč / ks
           </span>
           <span className="rounded-full bg-forest px-4 py-2 text-xs font-semibold uppercase tracking-wide text-cream transition group-hover:-translate-y-0.5 group-hover:shadow-lg group-hover:shadow-forest/20">
             {ctaLabel}

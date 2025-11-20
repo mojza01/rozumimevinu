@@ -51,7 +51,7 @@ export default async function WineDetailPage({ params }: Props) {
               </span>
               <span>{wine.vinarsvi}</span>
               <span className="text-muted">•</span>
-              <span>{wine.odruda}</span>
+              <span>{wine.zatrideni2}</span>
             </div>
             <h1 className="font-playfair text-3xl text-forest sm:text-4xl">
               {wine.nazev}

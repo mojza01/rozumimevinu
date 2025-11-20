@@ -85,7 +85,7 @@ export default function Home() {
           <div className="card-surface overflow-hidden">
             <div className="relative h-64 w-full">
               <Image
-                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80"
+                src="/4.jpg"
                 alt="Someliér a degustační sklenky"
                 fill
                 className="object-cover"
@@ -164,7 +164,7 @@ export default function Home() {
           <div className="card-surface overflow-hidden border-none bg-cream text-forest shadow-forest/15">
             <div className="relative h-60 w-full">
               <Image
-                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80"
+                src="/foto1.jpg"
                 alt="Degustace vín pro firmy"
                 fill
                 className="object-cover"

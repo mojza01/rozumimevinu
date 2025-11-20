@@ -33,15 +33,16 @@ export function AgeGate() {
   if (!open && !denied) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-forest/80 px-6 text-cream">
-      <div className="card-surface w-full max-w-lg bg-forest/95 p-8 text-center text-cream shadow-2xl shadow-black/30">
-        <p className="text-sm uppercase tracking-[0.3em] text-gold">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-8 text-forest backdrop-blur">
+      <div className="w-full max-w-lg rounded-3xl border border-cream/30 bg-cream/95 px-8 py-10 text-center shadow-[0_25px_80px_rgba(0,0,0,0.6)]">
+        <div className="mx-auto mb-4 h-1 w-16 rounded-full bg-gold/80" />
+        <p className="text-xs font-semibold uppercase tracking-[0.4em] text-gold/80">
           Upozornění
         </p>
-        <h2 className="mt-3 font-playfair text-2xl sm:text-3xl">
+        <h2 className="mt-4 font-playfair text-2xl text-forest sm:text-3xl">
           Vstupujete na stránky s nabídkou alkoholu
         </h2>
-        <p className="mt-4 text-base text-cream/80">
+        <p className="mt-4 text-base text-forest/80">
           Je vám již 18 let? Prosíme o potvrzení věku. Pokud ne, obsah nebude
           zpřístupněn.
         </p>
@@ -49,19 +50,19 @@ export function AgeGate() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <button
               onClick={handleConfirm}
-              className="rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-forest transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/30"
+              className="rounded-full bg-forest px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:-translate-y-0.5 hover:bg-forest/90 hover:shadow-lg hover:shadow-forest/40"
             >
               Ano, je mi 18+
             </button>
             <button
               onClick={handleDeny}
-              className="rounded-full border border-cream/50 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:bg-cream/10"
+              className="rounded-full border border-forest/30 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-forest transition hover:bg-forest/5"
             >
               Ne
             </button>
           </div>
         ) : (
-          <p className="mt-6 text-base text-red-100">
+          <p className="mt-6 text-base text-red-500">
             Obsah tohoto webu je určen pouze osobám starším 18 let. Děkujeme za
             pochopení.
           </p>
