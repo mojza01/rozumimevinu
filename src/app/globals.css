@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-forest: #0f2f28;
+  --color-moss: #2f533b;
+  --color-ivy: #5c7b4c;
+  --color-gold: #c6a060;
+  --color-cream: #f6f1e7;
+  --color-stone: #e2d8c7;
+  --color-muted: #5a5a52;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-forest: var(--color-forest);
+  --color-moss: var(--color-moss);
+  --color-ivy: var(--color-ivy);
+  --color-gold: var(--color-gold);
+  --color-cream: var(--color-cream);
+  --color-stone: var(--color-stone);
+  --color-muted: var(--color-muted);
+  --font-sans: var(--font-sora);
+  --font-display: var(--font-cormorant);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-forest);
+  font-family: var(--font-sora), system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #0f2f28;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-surface {
+  @apply rounded-2xl border border-stone/40 bg-white/80 shadow-lg shadow-forest/5 backdrop-blur;
+}
+
+.section-padding {
+  @apply px-6 py-16 sm:px-10 lg:px-16;
+}
+
+.font-playfair {
+  font-family: var(--font-sora), "Sora", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-brand {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0.2em;
 }

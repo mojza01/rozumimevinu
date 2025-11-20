@@ -1,65 +1,280 @@
 import Image from "next/image";
+import Link from "next/link";
+import { featuredWines } from "@/lib/data";
+import { WineCard } from "@/components/WineCard";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="relative min-h-screen overflow-hidden bg-forest text-cream">
+        <div className="absolute inset-0">
+          <div className="relative h-full w-full">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/vinice.png"
+              alt="Vinice v Mikulově"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-forest/85 via-forest/70 to-forest/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forest/20 to-forest" />
         </div>
-      </main>
-    </div>
+        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-10 px-6 py-24 text-center sm:px-10 lg:px-12 lg:py-32">
+          <div className="max-w-2xl space-y-6">
+            <p className="text-sm uppercase tracking-[0.3em] text-gold">
+              Vína, která dávají smysl
+            </p>
+            <h1 className="font-playfair text-4xl leading-snug sm:text-5xl">
+              ROZUMIMEVINU.CZ
+            </h1>
+            <p className="text-lg text-cream/85">
+              Pomáhám lidem rozumět vínu, ne jen pít. Ochutnávám desítky vzorků
+              od moravských rodinných vinařů a vybírám jen to nejlepší, co má
+              duši Mikulovska.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/viny"
+                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-forest transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/30"
+              >
+                Aktuální nabídka vín
+              </Link>
+              <Link
+                href="#degustace"
+                className="inline-flex items-center justify-center rounded-full border border-cream/60 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:-translate-y-0.5 hover:bg-cream/10 hover:shadow-lg hover:shadow-cream/20"
+              >
+                Domluvit řízenou degustaci
+              </Link>
+            </div>
+            <p className="text-sm uppercase tracking-[0.2em] text-cream/70">
+              Jižní Morava • Mikulov • Rodinné vinařství Mayer
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pribeh" className="section-padding mx-auto max-w-6xl">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-forest/70">
+              Příběh Tomáše Mojžíška
+            </p>
+            <h2 className="font-playfair text-3xl text-forest sm:text-4xl">
+              Mladý someliér, který chce, aby víno bylo srozumitelné
+            </h2>
+            <p className="text-lg text-muted">
+              Jsem Tomáš Mojžíšek a stojím za značkou ROZUMIMEVINU.CZ. Vyrůstal
+              jsem mezi vinicemi rodinného vinařství Mayer Mikulov. Každý rok
+              ochutnám desítky vzorků, poslouchám příběhy vinařů a vybírám
+              lahve, které mají čistou aromatiku, energii a původ v Mikulově.
+            </p>
+            <div className="grid gap-3 text-sm text-forest">
+              <div className="rounded-2xl border border-stone/70 bg-white/70 p-4 shadow-inner shadow-stone/30">
+                <strong>Vybírám jako pro sebe.</strong> Každý vzorek ochutnám,
+                zaznamenám a porovnám. Zůstane jen to, za co se osobně zaručím.
+              </div>
+              <div className="rounded-2xl border border-stone/70 bg-white/70 p-4 shadow-inner shadow-stone/30">
+                <strong>Vysvětluji jednoduše.</strong> Degustace vedu tak, aby
+                se ve víně našel každý host – bez složitých pojmů, s respektem k
+                terroiru.
+              </div>
+            </div>
+          </div>
+          <div className="card-surface overflow-hidden">
+            <div className="relative h-64 w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80"
+                alt="Someliér a degustační sklenky"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+            <div className="space-y-4 p-6">
+              <h3 className="font-playfair text-2xl text-forest">
+                Vinařství Mayer Mikulov
+              </h3>
+              <p className="text-muted">
+                Naše rodina hospodaří na mikulovských viničních tratích už přes
+                tři generace. Kombinujeme tradici s moderní technologií a
+                šetrným přístupem k půdě, aby víno bylo čisté, elegantní a
+                pitelné.
+              </p>
+              <div className="grid gap-2 text-sm text-forest">
+                <div className="flex justify-between rounded-lg bg-stone/50 px-4 py-3">
+                  <span>Ruční sběr hroznů</span>
+                  <span className="font-semibold text-forest/80">Každý rok</span>
+                </div>
+                <div className="flex justify-between rounded-lg bg-stone/50 px-4 py-3">
+                  <span>Soutěžní ocenění</span>
+                  <span className="font-semibold text-forest/80">Salon vín, AWC</span>
+                </div>
+                <div className="flex justify-between rounded-lg bg-stone/50 px-4 py-3">
+                  <span>Šetrné kelímky a korky</span>
+                  <span className="font-semibold text-forest/80">Sustain</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="degustace" className="section-padding bg-forest text-cream">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold/90">
+              Řízené degustace & teambuildingy
+            </p>
+            <h2 className="font-playfair text-3xl sm:text-4xl">
+              Degustace, které vtáhnou tým i přátele do světa vína
+            </h2>
+            <p className="text-lg text-cream/85">
+              Připravím degustaci u vás ve firmě, na teambuildingu nebo u vás
+              doma. Od úvodu do vína až po detailní porovnání terroiru Mikulovska.
+            </p>
+            <div className="grid gap-3">
+              <div className="rounded-2xl bg-white/10 p-4 text-cream">
+                <h4 className="font-semibold uppercase tracking-wide text-gold">
+                  Pro firmy a teambuildingy
+                </h4>
+                <p className="text-sm text-cream/85">
+                  Váš tým ochutná 6–8 vzorků, naučí se číst etikety, pozná rozdíl
+                  mezi odrůdami a odnese si jednoduché tipy k nákupu vína.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white/10 p-4 text-cream">
+                <h4 className="font-semibold uppercase tracking-wide text-gold">
+                  Pro soukromé akce
+                </h4>
+                <p className="text-sm text-cream/85">
+                  Degustace doma, oslavy nebo zahradní party. Přivezu chladící
+                  boxy, sklenky a připravím pairing s lokálními delikatesami.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="#kontakt"
+              className="inline-flex w-fit items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-wide text-forest transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-gold/30"
+            >
+              Nezávazně poptat degustaci
+            </Link>
+          </div>
+          <div className="card-surface overflow-hidden border-none bg-cream text-forest shadow-forest/15">
+            <div className="relative h-60 w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80"
+                alt="Degustace vín pro firmy"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+            <div className="space-y-3 p-6">
+              <h3 className="font-playfair text-2xl text-forest">
+                Co se naučíte
+              </h3>
+              <ul className="grid gap-2 text-sm text-muted">
+                <li>• Jak číst etikety a ročníky bez zbytečných složitostí.</li>
+                <li>• Jak poznat čisté víno od přearomatizovaného.</li>
+                <li>• Párování moravských vín s jídlem na českém stole.</li>
+                <li>• Jak skladovat a servírovat víno, aby chutnalo nejlépe.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding mx-auto max-w-6xl" id="nabidka">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-forest/70">
+              Aktuální výběr
+            </p>
+            <h2 className="font-playfair text-3xl text-forest sm:text-4xl">
+              Vína, která právě doporučuji
+            </h2>
+          </div>
+          <Link
+            href="/viny"
+            className="inline-flex items-center justify-center rounded-full bg-forest px-5 py-3 text-xs font-semibold uppercase tracking-wide text-cream transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest/20"
+          >
+            Zobrazit celou nabídku
+          </Link>
+        </div>
+        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredWines.map((wine) => (
+            <WineCard key={wine.id} wine={wine} />
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="kontakt"
+        className="section-padding bg-stone/60 text-forest lg:py-20"
+      >
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-forest/80">
+              Kontakt
+            </p>
+            <h2 className="font-playfair text-3xl text-forest sm:text-4xl">
+              Napište mi, rád doporučím víno nebo domluvím degustaci
+            </h2>
+            <p className="text-lg text-muted">
+              Stačí stručně napsat, pro jakou příležitost víno hledáte, kolik
+              hostů čekáte nebo jaký styl máte rádi. Ozvu se zpět s doporučením
+              a termínem.
+            </p>
+            <div className="grid gap-3 text-sm text-forest">
+              <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
+                <div className="font-semibold uppercase tracking-wide text-ivy">
+                  E-mail
+                </div>
+                <div className="text-lg text-forest">info@rozumimevinu.cz</div>
+              </div>
+              <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
+                <div className="font-semibold uppercase tracking-wide text-ivy">
+                  Telefon
+                </div>
+                <div className="text-lg text-forest">+420 777 555 111</div>
+              </div>
+            </div>
+            <Link
+              href="mailto:info@rozumimevinu.cz"
+              className="inline-flex w-fit items-center justify-center rounded-full bg-forest px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest/20"
+            >
+              Napsat e-mail
+            </Link>
+          </div>
+          <div className="card-surface p-6">
+            <div className="rounded-2xl border border-stone/60 bg-white p-6 shadow-inner shadow-stone/30">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-forest/70">
+                Mikulov & Jižní Morava
+              </p>
+              <h3 className="font-playfair text-2xl text-forest">
+                Odkud vína pocházejí
+              </h3>
+              <p className="mt-2 text-muted">
+                Spolupracuji s vinařstvími v Mikulově, Dolních Dunajovicích a na
+                Pálavě. Všechna vína jsou z rodinných podniků, které znám jménem
+                a které respektují půdu.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl bg-stone/50 px-4 py-3 text-sm text-forest">
+                  <strong>Mayer Mikulov</strong>
+                  <p>Rodinné vinařství s tradicí</p>
+                </div>
+                <div className="rounded-xl bg-stone/50 px-4 py-3 text-sm text-forest">
+                  <strong>Pálava</strong>
+                  <p>Vápencové podloží, aromatická vína</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
