@@ -82,49 +82,24 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="card-surface space-y-4 p-6">
+          <div className="card-surface overflow-hidden">
+            <div className="relative h-64 w-full">
+              <Image
+                src="/4.jpg"
+                alt="Someliér a degustační sklenky"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+            <div className="space-y-4 p-6">
               <h3 className="font-playfair text-2xl text-forest">
-                Víno vybíráme jako pro sebe
+                Sommelier Bc. Tomáš Mojžíšek
               </h3>
               <p className="text-muted">
-                V portfoliu držím jen vinaře, které znám osobně a kteří pracují
-                s respektem k terroiru Mikulovska. Každý vzorek ochutnám se
-                svým someliérským týmem a zapíšu si ho do degustací. Aktuálně
-                zastupuji především rodinné vinařství Mayer Mikulov, ale
-                vyhledávám i malé sklepy s vlastním rukopisem.
+                Zakladatel značky ROZUMIMEVINU.CZ, certifikovaný someliér s
+                vášní pro moravská vína a jejich příběhy. Zástupce rodinného vinařství Mayer Mikulov.
               </p>
-              <p className="text-muted">
-                Jako sommelier junior zajišťuji řízené degustace i privátní
-                výběry vín. Chci, aby víno bylo pochopitelné a zároveň
-                špičkové – od výběru hroznů, přes sklep až po servis na vašem
-                stole.
-              </p>
-              <div className="grid gap-2 text-sm text-forest">
-                <div className="rounded-2xl border border-stone/60 bg-white/70 px-4 py-3 shadow-inner shadow-stone/20">
-                  <strong>Osobní výběr</strong>
-                  <p>Každá lahev prochází slepou degustací a zápisem.</p>
-                </div>
-                <div className="rounded-2xl border border-stone/60 bg-white/70 px-4 py-3 shadow-inner shadow-stone/20">
-                  <strong>Zastupuji Mayer Mikulov</strong>
-                  <p>Rodinné vinařství s kořeny v Pálavě a ručním sběrem.</p>
-                </div>
-                <div className="rounded-2xl border border-stone/60 bg-white/70 px-4 py-3 shadow-inner shadow-stone/20">
-                  <strong>Sommelier junior</strong>
-                  <p>Řízené degustace, párování k menu i doporučení k investici.</p>
-                </div>
-              </div>
-            </div>
-            <div className="card-surface overflow-hidden">
-              <div className="relative h-64 w-full lg:h-full">
-                <Image
-                  src="/foto1.jpg"
-                  alt="Výběr vín Mayer Mikulov"
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -219,9 +194,55 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section-padding bg-stone/50">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_0.9fr]">
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-forest/70">
+              Mayer Mikulov
+            </p>
+            <h2 className="font-playfair text-3xl text-forest sm:text-4xl">
+              Rodinné vinařství Mayer Mikulov
+            </h2>
+            <p className="text-lg text-muted">
+              Pavel Mayer je 80letý vinař, který se vinařství věnuje již více než padesát let. Své vinařství založil v roce 1972 a od té doby
+              se vypracoval mezi respektované producenty regionu. Mikulovská vinařská oblast patří k nejpreztižnějším v české republice a její
+              specifické půdní i klimatické podmínky se výrazně odrážejí ve vínech tohoto vinařství. <br/>
+            </p>
+            <p className="text-lg text-muted">
+              Pan Pavel Mayer se při pěstování hroznů zaměřuje na ekologické a biodynamické postupy. V posledních letech se stále 
+              více orientuje na PIWI odrůdy - vyšlechtěné k vyšší odolnosti vůci houbovým chorobám a umožňující minimalizaci chemických postřiků.
+              Tyto odrůdy poskytují kvalitní hrozny a vynikající potenciál pro výrobu moderních, čistých vín.
+            </p>
+            <div className="grid gap-3 text-sm text-forest">
+              <div className="rounded-2xl border border-stone/60 bg-white/60 p-4 shadow-inner shadow-stone/20">
+                <strong>Pečlivost a odbornost</strong>
+                <p>Veškerá vína jsou nejvyšší kvality a dosahují zahraničního ocenění.</p>
+              </div>
+              <div className="rounded-2xl border border-stone/60 bg-white/60 p-4 shadow-inner shadow-stone/20">
+                <strong>Rodinná tradice</strong>
+                <p>Víno vzniká v rodině, která hospodaří v Pálavě už desítky let.</p>
+              </div>
+              <div className="rounded-2xl border border-stone/60 bg-white/60 p-4 shadow-inner shadow-stone/20">
+                <strong>Limitované edice</strong>
+                <p>Každá série je malá a pečlivě vybraná, ideální pro degustace.</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative min-h-[320px] overflow-hidden rounded-3xl shadow-lg shadow-forest/20">
+            <Image
+              src="/vina-lahve.png"
+              alt="Vinařství Mayer Mikulov"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        </div>
+      </section>
+
       <section
         id="kontakt"
-        className="section-padding bg-stone/60 text-forest lg:py-20"
+        className="section-padding bg-cream text-forest lg:py-20"
       >
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-4">
@@ -241,44 +262,13 @@ export default function Home() {
                 <div className="font-semibold uppercase tracking-wide text-ivy">
                   E-mail
                 </div>
-                <div className="text-lg text-forest">info@rozumimevinu.cz</div>
+                <div className="text-lg text-forest">mojzisekinfo@gmail.com</div>
               </div>
               <div className="rounded-2xl bg-white/80 p-4 shadow-sm">
                 <div className="font-semibold uppercase tracking-wide text-ivy">
                   Telefon
                 </div>
-                <div className="text-lg text-forest">+420 777 555 111</div>
-              </div>
-            </div>
-            <Link
-              href="mailto:info@rozumimevinu.cz"
-              className="inline-flex w-fit items-center justify-center rounded-full bg-forest px-6 py-3 text-sm font-semibold uppercase tracking-wide text-cream transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-forest/20"
-            >
-              Napsat e-mail
-            </Link>
-          </div>
-          <div className="card-surface p-6">
-            <div className="rounded-2xl border border-stone/60 bg-white p-6 shadow-inner shadow-stone/30">
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-forest/70">
-                Mikulov & Jižní Morava
-              </p>
-              <h3 className="font-playfair text-2xl text-forest">
-                Odkud vína pocházejí
-              </h3>
-              <p className="mt-2 text-muted">
-                Spolupracuji s vinařstvími v Mikulově, Dolních Dunajovicích a na
-                Pálavě. Všechna vína jsou z rodinných podniků, které znám jménem
-                a které respektují půdu.
-              </p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl bg-stone/50 px-4 py-3 text-sm text-forest">
-                  <strong>Mayer Mikulov</strong>
-                  <p>Rodinné vinařství s tradicí</p>
-                </div>
-                <div className="rounded-xl bg-stone/50 px-4 py-3 text-sm text-forest">
-                  <strong>Pálava</strong>
-                  <p>Vápencové podloží, aromatická vína</p>
-                </div>
+                <div className="text-lg text-forest">+420 734 693 019</div>
               </div>
             </div>
           </div>

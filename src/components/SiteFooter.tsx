@@ -7,17 +7,16 @@ export function SiteFooter() {
         <div className="space-y-3">
           <h3 className="font-brand text-xl text-gold">ROZUMIMEVINU.CZ</h3>
           <p className="text-cream/80">
-            Výběrová vína z Mikulova a řízené degustace s mladým someliérem
-            Tomášem Mojžíškem.
+            Výběrová vína z Mikulova a řízené degustace, které vám dají hodnotu. 
           </p>
         </div>
         <div className="space-y-2">
           <h4 className="font-semibold uppercase tracking-wide text-gold">
             Kontakt
           </h4>
-          <p className="text-cream/80">E-mail: info@rozumimevinu.cz</p>
-          <p className="text-cream/80">Telefon: +420 777 555 111</p>
-          <p className="text-cream/80">Adresa: Mikulov, Česká republika</p>
+          <p className="text-cream/80">E-mail: mojzisekinfo@gmail.com</p>
+          <p className="text-cream/80">Telefon: +420 734 693 019</p>
+          <p className="text-cream/80">Adresa: Veská 100, Sezemice</p>
         </div>
         <div className="space-y-2">
           <h4 className="font-semibold uppercase tracking-wide text-gold">
