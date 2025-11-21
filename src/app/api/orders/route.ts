@@ -4,7 +4,8 @@ import { generatePaymentQr } from "@/lib/qr";
 import { sendOrderEmail } from "@/lib/email";
 
 export async function GET() {
-  return NextResponse.json(listOrders());
+  const orders = await listOrders();
+  return NextResponse.json(orders);
 }
 
 export async function POST(request: Request) {
@@ -17,37 +18,48 @@ export async function POST(request: Request) {
     );
   }
 
-  const { wineId, wineName, quantity, name, email, phone, address, note } =
-    body;
+  const { items, name, email, phone, address, note } = body;
 
-  if (
-    !wineId ||
-    !wineName ||
-    !quantity ||
-    !name ||
-    !email ||
-    !phone ||
-    !address
-  ) {
+  if (!Array.isArray(items) || items.length === 0) {
+    return NextResponse.json(
+      { message: "Košík je prázdný, nelze vytvořit objednávku." },
+      { status: 400 }
+    );
+  }
+
+  if (!name || !email || !phone || !address) {
     return NextResponse.json(
       { message: "Vyplňte prosím všechny povinné údaje." },
       { status: 400 }
     );
   }
 
-  const parsedQuantity = Number(quantity);
+  const sanitizedItems = items
+    .map((item: any) => ({
+      wineId: String(item.wineId),
+      wineName: String(item.wineName),
+      quantity: Number(item.quantity),
+      price: Number(item.price),
+    }))
+    .filter(
+      (item) =>
+        item.wineId &&
+        item.wineName &&
+        Number.isFinite(item.quantity) &&
+        item.quantity > 0 &&
+        Number.isFinite(item.price) &&
+        item.price >= 0
+    );
 
-  if (Number.isNaN(parsedQuantity) || parsedQuantity <= 0) {
+  if (sanitizedItems.length === 0) {
     return NextResponse.json(
-      { message: "Počet lahví musí být kladné číslo." },
+      { message: "Neplatná položka košíku. Zkuste to prosím znovu." },
       { status: 400 }
     );
   }
 
-  const order = addOrder({
-    wineId,
-    wineName,
-    quantity: parsedQuantity,
+  const order = await addOrder({
+    items: sanitizedItems,
     name: name.trim(),
     email: email.trim(),
     phone: phone.trim(),

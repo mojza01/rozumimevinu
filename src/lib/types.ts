@@ -20,10 +20,15 @@ export type Wine = {
   vyber?: boolean;
 };
 
-export type OrderInput = {
+export type OrderItem = {
   wineId: string;
   wineName: string;
   quantity: number;
+  price: number;
+};
+
+export type OrderInput = {
+  items: OrderItem[];
   name: string;
   email: string;
   phone: string;
@@ -35,4 +40,12 @@ export type Order = OrderInput & {
   id: string;
   createdAt: string;
   paymentStatus: "čeká na platbu" | "zaplaceno";
+};
+
+export type CartItem = {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
 };

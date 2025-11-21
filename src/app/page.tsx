@@ -21,7 +21,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-forest/85 via-forest/70 to-forest/60" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forest/20 to-forest" />
         </div>
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-10 px-6 py-24 text-center sm:px-10 lg:px-12 lg:py-32">
+        <div className="relative mx-auto flex min-h-[80vh] max-w-4xl flex-col items-center justify-center gap-10 px-6 py-24 text-center sm:px-10 lg:px-12 lg:py-32">
           <div className="max-w-2xl space-y-6">
             <p className="text-sm uppercase tracking-[0.3em] text-gold">
               Vína, která dávají smysl
@@ -82,39 +82,48 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="card-surface overflow-hidden">
-            <div className="relative h-64 w-full">
-              <Image
-                src="/4.jpg"
-                alt="Someliér a degustační sklenky"
-                fill
-                className="object-cover"
-                sizes="100vw"
-              />
-            </div>
-            <div className="space-y-4 p-6">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="card-surface space-y-4 p-6">
               <h3 className="font-playfair text-2xl text-forest">
-                Vinařství Mayer Mikulov
+                Víno vybíráme jako pro sebe
               </h3>
               <p className="text-muted">
-                Naše rodina hospodaří na mikulovských viničních tratích už přes
-                tři generace. Kombinujeme tradici s moderní technologií a
-                šetrným přístupem k půdě, aby víno bylo čisté, elegantní a
-                pitelné.
+                V portfoliu držím jen vinaře, které znám osobně a kteří pracují
+                s respektem k terroiru Mikulovska. Každý vzorek ochutnám se
+                svým someliérským týmem a zapíšu si ho do degustací. Aktuálně
+                zastupuji především rodinné vinařství Mayer Mikulov, ale
+                vyhledávám i malé sklepy s vlastním rukopisem.
+              </p>
+              <p className="text-muted">
+                Jako sommelier junior zajišťuji řízené degustace i privátní
+                výběry vín. Chci, aby víno bylo pochopitelné a zároveň
+                špičkové – od výběru hroznů, přes sklep až po servis na vašem
+                stole.
               </p>
               <div className="grid gap-2 text-sm text-forest">
-                <div className="flex justify-between rounded-lg bg-stone/50 px-4 py-3">
-                  <span>Ruční sběr hroznů</span>
-                  <span className="font-semibold text-forest/80">Každý rok</span>
+                <div className="rounded-2xl border border-stone/60 bg-white/70 px-4 py-3 shadow-inner shadow-stone/20">
+                  <strong>Osobní výběr</strong>
+                  <p>Každá lahev prochází slepou degustací a zápisem.</p>
                 </div>
-                <div className="flex justify-between rounded-lg bg-stone/50 px-4 py-3">
-                  <span>Soutěžní ocenění</span>
-                  <span className="font-semibold text-forest/80">Salon vín, AWC</span>
+                <div className="rounded-2xl border border-stone/60 bg-white/70 px-4 py-3 shadow-inner shadow-stone/20">
+                  <strong>Zastupuji Mayer Mikulov</strong>
+                  <p>Rodinné vinařství s kořeny v Pálavě a ručním sběrem.</p>
                 </div>
-                <div className="flex justify-between rounded-lg bg-stone/50 px-4 py-3">
-                  <span>Šetrné kelímky a korky</span>
-                  <span className="font-semibold text-forest/80">Sustain</span>
+                <div className="rounded-2xl border border-stone/60 bg-white/70 px-4 py-3 shadow-inner shadow-stone/20">
+                  <strong>Sommelier junior</strong>
+                  <p>Řízené degustace, párování k menu i doporučení k investici.</p>
                 </div>
+              </div>
+            </div>
+            <div className="card-surface overflow-hidden">
+              <div className="relative h-64 w-full lg:h-full">
+                <Image
+                  src="/foto1.jpg"
+                  alt="Výběr vín Mayer Mikulov"
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
               </div>
             </div>
           </div>

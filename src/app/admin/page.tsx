@@ -116,9 +116,10 @@ export default function AdminPage() {
                     <div>{order.phone}</div>
                   </td>
                   <td className="px-4 py-3 text-forest">
-                    <div className="font-semibold">{order.wineName}</div>
-                    <div className="text-xs text-muted">
-                      {order.quantity}× lahev
+                    <div className="font-semibold">
+                      {order.items
+                        .map((item) => `${item.quantity}× ${item.wineName}`)
+                        .join(", ")}
                     </div>
                     {order.note && (
                       <div className="mt-1 text-xs text-muted">

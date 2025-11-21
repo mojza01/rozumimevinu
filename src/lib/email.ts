@@ -10,7 +10,9 @@ export async function sendOrderEmail({
   // TODO: Nahradit reálnou e-mailovou službou (SendGrid, Resend, apod.)
   console.log("=== SIMULACE ODESLÁNÍ E-MAILU ===");
   console.log(`Zákazník: ${order.name} (${order.email})`);
-  console.log(`Víno: ${order.wineName}, množství: ${order.quantity}`);
+  order.items.forEach((item) => {
+    console.log(`Víno: ${item.wineName}, množství: ${item.quantity}`);
+  });
   console.log(`QR pro platbu: ${qrCodeUrl}`);
   console.log("=================================");
   return { ok: true };
